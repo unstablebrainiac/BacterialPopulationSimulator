@@ -41,13 +41,13 @@ public class PopulationCalculator {
 
     public static void plot() throws InterruptedException, ExecutionException {
         matlabEngine.eval("hold on;");
-        matlabEngine.eval("plot(X,Yfit);");
+        matlabEngine.eval("plot(X,Y,'o');");
         matlabEngine.eval("title('Bacterial Population in Growth Phase')");
         matlabEngine.eval("ylabel('Population')");
         matlabEngine.eval("xlabel('Time (minutes)')");
         matlabEngine.eval("print('populationPlot1','-djpeg');");
-        matlabEngine.eval("plot(X,Y,'o');");
-        matlabEngine.eval("legend('Exponential Fit', 'Simulation data', 'Location', 'northwest')");
+        matlabEngine.eval("plot(X,Yfit);");
+        matlabEngine.eval("legend('Simulation data', 'Exponential Fit', 'Location', 'northwest')");
         matlabEngine.eval("print('populationPlot2','-djpeg');");
         sleep(20000);
     }
